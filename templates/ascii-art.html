@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="../scripts/handleDownload.js"></script>
+</head>
+
+<body>
+  <h1 class="p1">ASCII Graphic Art</h1>
+  <h5 class="p1">Advise. Use CAPSLOCK for better reading of thinkertoy font</h5>
+  <div class="p1">
+    <pre id="result">{{.}}</pre>
+    
+  </div>
+  <form method="POST" action="/">
+    <button>go back</button>
+  </form>
+  <button id="dwn-btn">download</button>
+</body>
+
+</html>
+
+<style>
+  body {
+    background-image: url("https://i.pinimg.com/236x/47/3e/ba/473eba5e968a749633b6c78db1065aae--my-life-technical-communication.jpg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-attachment: fixed;
+  }
+</style>
+
+<script>
+  document.getElementById("dwn-btn").addEventListener("click", function () {
+    
+    var text = document.getElementById('result').innerHTML
+    console.log(text)
+    if (text == '\n\nYou need to enter something!\n\n\n'){
+      alert("We can offer You to type smth in (: ")
+      return;
+    }
+    if (text == '\n\nOnly English letters and printable symbols are accepted!\n\n\n'){
+      alert("We can offer You to read instructions ")
+      return;
+    }
+      download("hello world.txt", text);
+  }, false);
+
+  
+</script>

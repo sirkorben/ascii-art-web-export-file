@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+  <h1 class="p1">ASCII Graphic Art</h1>
+  <hr class="lineAlign">
+  <form method="POST" action="/ascii-art">
+    <div>
+      <label class="p1" for="name">enter your text </label>
+      <input name="name" type="text" value="" />
+    </div>
+    <h2 class="p1">choose the font for your text</h2>
+    <button value="standard.txt" name="submit">standard</button>
+    <button value="shadow.txt" name="submit">shadow</button>
+    <button value="thinkertoy.txt" name="submit">thinkertoy</button>
+  </form>
+  <p><img src="https://i.pinimg.com/236x/47/3e/ba/473eba5e968a749633b6c78db1065aae--my-life-technical-communication.jpg"
+      alt="О_о"></p>
+</body>
+
+</html>
+
+<style>
+  img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+</style>

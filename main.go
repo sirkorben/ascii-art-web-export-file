@@ -21,6 +21,11 @@ func startHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	err = temp.Execute(w, "")
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte("Error 500 - Internal server error!"))
+		return
+	}
 }
 
 func secondHandler(w http.ResponseWriter, r *http.Request) {
@@ -33,6 +38,11 @@ func secondHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	r.ParseForm()
 	err = temp.Execute(w, toAscii(r.FormValue("name"), r.FormValue("submit")))
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte("Error 500 - Internal server error!"))
+		return
+	}
 }
 
 func handleRequest() {
